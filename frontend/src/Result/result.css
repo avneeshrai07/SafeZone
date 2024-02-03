@@ -1,0 +1,34 @@
+.accuracy{
+ color: green;
+ font-size: x-large;
+}
+
+.sexual{
+color: red;
+font-size: larger;
+}
+
+.violent{
+color: red;
+font-size: larger;
+}
+
+.robberyTheft{
+color: yellow;
+font-size: larger;
+}
+
+.fraudScam{
+color: yellow;
+font-size: larger;
+}
+
+.lessoffensive{
+color: blue;
+font-size: larger;
+}
+
+.safety{
+    color: green;
+    font-size: xx-large;
+}

@@ -1,0 +1,43 @@
+body{
+    background-color: burlywood;
+}
+
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .userInputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .Gender,
+  .AgeLevel,
+  .AreaName {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  select {
+    width: 200px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .Predict {
+    margin-top: 20px;
+  }
+  
+  .PredictionResult {
+    margin-top: 20px;
+  }
+  
+  /* Add additional styles as needed */
+  
