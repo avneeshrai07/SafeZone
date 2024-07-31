@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/SafeZone/static/css/main.cdc532cb.css",
+    "main.js": "/SafeZone/static/js/main.d8342412.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/SafeZone/static/js/787.9e9f4ffd.chunk.js",
+    "static/media/1.jpg": "/SafeZone/static/media/1.09c62b74ce639c99023f.jpg",
+    "index.html": "/SafeZone/index.html",
+    "main.cdc532cb.css.map": "/SafeZone/static/css/main.cdc532cb.css.map",
+    "main.d8342412.js.map": "/SafeZone/static/js/main.d8342412.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/SafeZone/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdc532cb.css",
+    "static/js/main.d8342412.js"
+  ]
+}
