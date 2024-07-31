@@ -16,8 +16,13 @@ This project is a machine learning-based crime prediction model that predicts va
 - **Backend Integration**: Uses Flask for handling backend operations and integrating the machine learning model.
 - **Random Forest Classifier**: Employs a Random Forest Classifier for making crime predictions.
 
+## Screenshots
 
-[Crime Prediction Banner](./public/images/static/1.png)
+![HomePage](./public/images/static/1.png)
+![Prediction Result](./public/images/static/prediction_result.png)
+![Safety Index](./public/images/static/safsafety_index.png)
+![Crime Category](./public/images/static/Crime_Category.png)
+
 ## Technologies Used
 
 - **Frontend**: React
