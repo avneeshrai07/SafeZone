@@ -22,8 +22,21 @@ def predict_crime():
         userAgeLevel = input_data.get('ageLevel')
         userAreaName = input_data.get('areaName')
 
-        # Use subprocess.PIPE to capture the output
-        process = subprocess.Popen(['python', safe_zone_model_path, userGender, userAgeLevel, userAreaName], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # Created subprocess to capture the output or error from the safeZone model
+        process = subprocess.Popen(
+
+        # progamme name (python), program path(safeZoneModelPath) are the fixed arguments
+        # gender, Age, Area are the variable arguments
+        ['python', safe_zone_model_path, userGender, userAgeLevel, userAreaName], 
+
+        # capture the standard output (stdout) of the script
+        stdout=subprocess.PIPE, 
+
+        # capture the error in any ocured in the script
+        stderr=subprocess.PIPE
+        )
+
+        # capture the output and the error of the after ruuning the subprocess
         out, err = process.communicate()
 
         if process.returncode == 0:
@@ -46,7 +59,6 @@ def predict_crime():
                 # Include the calculated crime predictions in the response
                 output_dict["calculatedCrimePredictions"] = calculated_crime_predictions
 
-                # ... (other relevant information)
 
                 return jsonify(output_dict)
             except Exception as parse_error:

@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# SafeZone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a machine learning-based crime prediction model that predicts various types of crimes and their likelihood of occurrence in different areas. The model is built using a database with more than 50,000 rows of data, and it utilizes a Random Forest Classifier for its predictions. The backend integration is handled using Flask, and the frontend is developed with React.
 
-## Available Scripts
+## Website Link
 
-In the project directory, you can run:
+[SafeZone](https://avneeshrai07.github.io/SafeZone/)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Crime Prediction**: Predicts the likelihood of various crimes such as sexual crimes, violent crimes, robbery/theft, fraud/scam, and less offensive crimes.
+- **Model Accuracy**: Displays the accuracy of the prediction model.
+- **Safety Index**: Provides a safety level for the selected area based on the predictions.
+- **User-Friendly Interface**: Allows users to select their gender, age level, and area name to get predictions.
+- **Large Database**: Utilizes a comprehensive database with over 50,000 rows of data to ensure accurate predictions.
+- **Backend Integration**: Uses Flask for handling backend operations and integrating the machine learning model.
+- **Random Forest Classifier**: Employs a Random Forest Classifier for making crime predictions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+![HomePage](./public/images/static/1.png)
+![Prediction Result](./public/images/static/prediction_result.png)
+![Safety Index](./public/images/static/safsafety_index.png)
+![Crime Category](./public/images/static/Crime_Category.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **Frontend**: React
+- **Backend**: Flask
+- **Machine Learning**: Random Forest Classifier
+- **Database**: Extensive dataset with over 50,000 rows
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How It Works
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **User Input**: Users input their gender, age level, and area name.
+2. **Prediction Request**: The input data is sent to the backend where the machine learning model is hosted.
+3. **ML Model**: The Random Forest Classifier processes the input data and makes predictions.
+4. **Result Display**: The predictions are sent back to the frontend and displayed to the user.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Contributions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Contributions are welcome! Please fork the repository and submit a pull request for any improvements or new features.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contact
 
-## Learn More
+For any inquiries or issues, please contact [ofc.avneesh@gmail.com].
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

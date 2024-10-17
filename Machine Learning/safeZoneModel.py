@@ -8,6 +8,7 @@ from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 
 # Load the new dataset
+
 dataset_path = 'C:\\Users\\avnee\\OneDrive\\Desktop\\webd\\SafeZone\\Database\\Safe-ZoneDB.csv'
 data = pd.read_csv(dataset_path)
 

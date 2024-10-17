@@ -1,43 +1,89 @@
-body{
-    background-color: burlywood;
+body {
+  background-color: burlywood;
+  height: 100vh;
+  background-image: url('../../public/images/1.jpg');
+  background-position: start center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
 }
 
 .Home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-  }
-  
-  .userInputs {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .Gender,
-  .AgeLevel,
-  .AreaName {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    margin-right: 10px;
-  }
-  
-  select {
-    width: 200px;
-    padding: 5px;
-    font-size: 14px;
-  }
-  
-  .Predict {
-    margin-top: 20px;
-  }
-  
-  .PredictionResult {
-    margin-top: 20px;
-  }
-  
-  /* Add additional styles as needed */
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20vh 10px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.userInputs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.Gender, .AgeLevel, .AreaName {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.Predict {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+button:hover:enabled {
+  background-color: #0056b3;
+}
+
+.PredictionResult {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #007BFF; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
