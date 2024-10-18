@@ -29,7 +29,7 @@ def predict_crime():
         # gender, Age, Area are the variable arguments
         ['python', safe_zone_model_path, userGender, userAgeLevel, userAreaName], 
 
-        # capture the standard output (stdout) of the script
+        # capture the standard output (stdout or any print()statement) of the script
         stdout=subprocess.PIPE, 
 
         # capture the error in any ocured in the script
@@ -43,8 +43,12 @@ def predict_crime():
             output = out.decode('utf-8')
             print("Subprocess Output:", output)
 
+            # the output will look something like this:
+            # "Calculated Crime Predictions:\nViolent crimes: 25.00%\nSexual crime: 15.00%\nRobbery/Theft: 30.00%\nFraud/Scam: 10.00%\nLess offensive crimes: 20.00%\nSafety Index: 70.00\n"
+
+
             try:
-                # Parse the output string and create a dictionary
+                # created a dictionary to store the result
                 output_dict = {"success": True}
 
                 # Extract the calculated crime predictions from the output string

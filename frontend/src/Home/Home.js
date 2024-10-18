@@ -24,6 +24,7 @@ function Home() {
   const handlePredictClick = async () => {
     setLoading(true);
     try {
+      // Sending Data to the server
       const response = await fetch('http://localhost:5000/predict', {
         method: 'POST',
         headers: {
@@ -36,6 +37,7 @@ function Home() {
         }),
       });
 
+      // capturing data from the server
       const result = await response.json();
       console.log("Response from server:", result);
 

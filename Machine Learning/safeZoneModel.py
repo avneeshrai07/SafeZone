@@ -1,4 +1,3 @@
-import json
 import sys
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -7,9 +6,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 
-# Load the new dataset
-
-dataset_path = 'C:\\Users\\avnee\\OneDrive\\Desktop\\webd\\SafeZone\\Database\\Safe-ZoneDB.csv'
+# Loading the  dataset
+dataset_path = '../Database/Safe-ZoneDB.csv'
 data = pd.read_csv(dataset_path)
 
 # Select relevant columns
@@ -23,63 +21,65 @@ le_area.fit(data['Area Name'].unique())
 data['Gender'] = le_gender.transform(data['Gender'])
 data['Area Name'] = le_area.transform(data['Area Name'])
 
-# Split the data into features (X) and target variable (y)
-X = data[['Gender', 'Area Name', 'Age Level']]
-y = data['Crime Category']
+
+# Split the data into features  and target variable 
+features = data[['Gender', 'Area Name', 'Age Level']]
+target = data['Crime Category']
 
 # Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.8, random_state=42)
+features_train, features_test, target_train, target_test = train_test_split(features, target, test_size=0.8, random_state=42)
+
 
 # Train a Random Forest Classifier
 model = RandomForestClassifier()
-model.fit(X_train, y_train)
+model.fit(features_train, target_train)
 
-# Make predictions on the test set
-y_pred = model.predict(X_test)
+# Make predictions on the test set and store the predected values in target_prediction
+target_prediction = model.predict(features_test)
+
+
 
 # Calculate and print the accuracy
-accuracy = accuracy_score(y_test, y_pred)
+
+accuracy = accuracy_score(target_test, target_prediction)
 print(f'Model Accuracy: {accuracy * 100:.2f}%')
+
 
 # Check if the expected number of command-line arguments is provided
 if len(sys.argv) != 4:
     print("Usage: python safeZoneModel.py <userGender> <userAgeLevel> <userAreaName>")
     sys.exit(1)
 
+
 # Access command-line arguments
 userGender = sys.argv[1]
-userAgeLevel = sys.argv[2]
+userAgeLevel = int(sys.argv[2])
 userAreaName = sys.argv[3]
 
-# Create DataFrame with user input
-new_data = pd.DataFrame({
-    'Gender': [userGender],
-    'Age Level': [userAgeLevel],
-    'Area Name': [userAreaName]
-})
-
-# Encode categorical variables for new data
-gender_input = new_data['Gender'].iloc[0]
-area_input = new_data['Area Name'].iloc[0]
-age_input = int(new_data['Age Level'].iloc[0])
 
 # Check if the input values are present in the training data, otherwise use default values
-gender_encoded = le_gender.transform([gender_input])[0] if gender_input in le_gender.classes_ else le_gender.transform(['M'])[0]
-area_encoded = le_area.transform([area_input])[0] if area_input in le_area.classes_ else le_area.transform(['Gomti nagar'])[0]
+gender_encoded = le_gender.transform([userGender])[0] if userGender in le_gender.classes_ else le_gender.transform(['M'])[0]
+area_encoded = le_area.transform([userAreaName])[0] if userAreaName in le_area.classes_ else le_area.transform(['Gomti nagar'])[0]
 
 # Handle 'Age Level' input
-if 0 <= age_input <= 10:
-    age_encoded = age_input
+if 0 <= userAgeLevel <= 10:
+    age_encoded = userAgeLevel
 else:
-    age_encoded = 0 if age_input < 0 else 10
+    age_encoded = 0 if userAgeLevel < 0 else 10
 
-# Update the new_data with encoded values
-new_data['Gender'] = gender_encoded
-new_data['Area Name'] = area_encoded
-new_data['Age Level'] = age_encoded
+
+
+# Create DataFrame with encoded values directly
+new_data = pd.DataFrame({
+    'Gender': [gender_encoded],
+    'Age Level': [age_encoded],
+    'Area Name': [area_encoded]
+})
 
 # Predict probabilities for each class
 prediction_probabilities = model.predict_proba(new_data[['Gender', 'Area Name', 'Age Level']])
+
+
 
 # Ensure that each class has at least a 1% chance
 min_probability = 0.01
